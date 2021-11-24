@@ -40,7 +40,7 @@ if (!localStorage.getItem("shortenedLinks").length === 0) {
     }, 1000);
   });
 }
-document.forms["short"].addEventListener("click", (e) => {
+document.forms["short"].addEventListener("submit", (e) => {
   e.preventDefault();
   if (input.reportValidity()) {
     let shortened = [];
