@@ -12,6 +12,7 @@ hamburger.addEventListener("click", () => {
     menu.style.display = "none";
   }
 });
+localStorage.setItem("shortenedLinks", JSON.stringify([]));
 let shortened = JSON.parse(localStorage.getItem("shortenedLinks"));
 if (!localStorage.getItem("shortenedLinks").length === 0) {
   shortened.forEach((link) => {
