@@ -46,7 +46,7 @@ document.forms["short"].addEventListener("click", (e) => {
     let shortened = [];
     let value = input.value;
     const getShorten = async () => {
-      await fetch(`https://api.shrtco.de/v2/shorten?url=${value}`)
+      await fetch(`https://api.shrtco.de/v2/shorten?url=${input.value}`)
         .then((res) => res.json())
         .then((data) => {
           let div = document.createElement("div");
