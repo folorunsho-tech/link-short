@@ -42,16 +42,16 @@ if (!localStorage.getItem("shortenedLinks").length === 0) {
 }
 document.forms["short"].addEventListener("click", (e) => {
   e.preventDefault();
-  console.log("hello");
   if (input.reportValidity()) {
     let shortened = [];
+    let value = input.value;
     const getShorten = async () => {
-      await fetch(`https://api.shrtco.de/v2/shorten?url=${input.value}`)
+      await fetch(`https://api.shrtco.de/v2/shorten?url=${value}`)
         .then((res) => res.json())
         .then((data) => {
           let div = document.createElement("div");
           div.classList.add("shorted");
-          div.innerHTML = `<p id="original-link">${input.value}</p>
+          div.innerHTML = `<p id="original-link">${value}</p>
         <hr />
         <div>
           <input id="shorted-link" value="${data.result.full_short_link}" />
@@ -60,7 +60,7 @@ document.forms["short"].addEventListener("click", (e) => {
           shortedLinks.append(div);
           shortened.push({
             short_link: data.result.full_short_link,
-            full_link: input.value,
+            full_link: value,
           });
           localStorage.setItem("shortenedLinks", JSON.stringify(shortened));
         });
