@@ -1,0 +1,42 @@
+$VeryDarkViolet: hsl(260, 8%, 14%);
+$DarkViolet: hsl(257, 27%, 26%);
+footer {
+  background-color: $VeryDarkViolet;
+  .before-footer {
+    background: url("../../images/bg-boost-mobile.svg");
+    background-color: $DarkViolet;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    h2 {
+      font-size: 1.3rem;
+    }
+    button {
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 1rem 3rem;
+      color: white;
+      text-align: center;
+    }
+  }
+  .footer {
+    text-align: center;
+    padding: 1rem 0;
+    .features {
+      h3 {
+        color: white;
+      }
+      p {
+        color: white;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+    }
+    .resources {
+      @extend .features;
+    }
+    .company {
+      @extend .features;
+    }
+  }
+}

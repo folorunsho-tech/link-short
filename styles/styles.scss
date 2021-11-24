@@ -1,0 +1,52 @@
+@import "./partials/header";
+@import "./partials/nav";
+@import "./partials/main";
+@import "./partials/footer";
+@import "./partials/media";
+
+$Cyan: hsl(180, 66%, 49%);
+$DarkViolet: hsl(257, 27%, 26%);
+$Red: hsl(0, 87%, 67%);
+$Gray: hsl(0, 0%, 75%);
+$GrayishViolet: hsl(257, 7%, 63%);
+$VeryDarkBlue: hsl(255, 11%, 22%);
+$VeryDarkViolet: hsl(260, 8%, 14%);
+
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 18px;
+}
+a {
+  text-decoration: none;
+}
+
+nav,
+header,
+main {
+  margin: 0 auto;
+}
+button {
+  cursor: pointer;
+  font-size: 0.8rem;
+  border-radius: 40px;
+  border: none;
+}
+li {
+  list-style: none;
+}
+
+.cta {
+  background-color: $Cyan;
+  @extend .transition;
+}
+.cta:hover {
+  background-color: lighten($color: $Cyan, $amount: 20);
+}
+.transition {
+  transition: all 0.3s ease;
+}

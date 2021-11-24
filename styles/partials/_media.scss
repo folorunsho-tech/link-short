@@ -1,0 +1,151 @@
+@media screen and (min-width: 768px) {
+  nav {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 2rem;
+    .hamburger {
+      display: none;
+    }
+    .menu {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      padding: 0;
+      margin: 0 auto;
+      position: static;
+      font-size: 0.8rem;
+      background-color: transparent;
+      ul {
+        padding: 0;
+        flex-direction: row;
+        width: 60%;
+        li a {
+          color: $GrayishViolet;
+        }
+        li a:hover {
+          color: darken($color: $GrayishViolet, $amount: 30);
+        }
+      }
+      div {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        align-items: center;
+        width: 40%;
+        border: none;
+        button {
+          color: $GrayishViolet;
+        }
+
+        .login:hover {
+          color: darken($color: $GrayishViolet, $amount: 30);
+        }
+        .signup {
+          color: white;
+        }
+      }
+    }
+  }
+  header {
+    text-align: center;
+    #working {
+      margin-top: -2rem;
+      width: 100%;
+    }
+  }
+  main {
+    .shorten-here {
+      flex-direction: row;
+      gap: 0.5rem;
+      transform: translateX(60px);
+
+      input {
+        width: 80%;
+      }
+      .add-link {
+        position: absolute;
+        bottom: 0;
+      }
+      button {
+        width: 30%;
+        font-size: 0.7rem;
+        padding: 0.5rem 2rem;
+      }
+    }
+  }
+  footer {
+    .footer {
+      display: grid;
+      padding: 2rem;
+      justify-content: center;
+      text-align: left;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+@media screen and (min-width: 900px) {
+  nav {
+    padding: 2rem;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    padding-bottom: 6rem;
+    #working {
+      order: 2;
+      justify-self: end;
+    }
+    section {
+      h2 {
+        font-size: 3rem;
+      }
+      p {
+        margin-top: -1rem;
+        width: 40ch;
+      }
+      text-align: left;
+      button {
+        margin-top: 1rem;
+      }
+    }
+  }
+  main {
+    width: 100%;
+    .shorten-here {
+      margin: 0 auto;
+      margin-top: 2rem;
+    }
+    .statistics {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      padding-top: 8rem;
+      .header {
+        grid-column: 1/4;
+      }
+    }
+    .shorted-links {
+      grid-column: 1/4;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin-top: -2rem;
+      .shorted {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1120px) {
+  main {
+    .shorted-links {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}

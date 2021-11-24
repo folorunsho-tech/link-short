@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 0.8rem;
+        text-align: center;
+        background-color: aquamarine;
+        padding: 1rem;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+        text-transform: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img src="./images/logo.svg" alt="Shortly" class="logo" />
+      <div class="hamburger">
+        <img src="/images/menu-svgrepo-com.svg" alt="Menu-Hamburger" />
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+        <div>
+          <button class="login">Login</button>
+          <button class="signup cta">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <img src="/images/illustration-working.svg" alt="" id="working" />
+      <section>
+        <h2>More than just shorter links</h2>
+        <p>
+          Build your brand’s recognition and get detailed insights on how your
+          links are performing.
+        </p>
+        <button class="cta">Get Started</button>
+      </section>
+    </header>
+    <main>
+      <form class="shorten-here" name="short">
+        <input
+          type="url"
+          placeholder="Shorten a link here..."
+          class="input-box"
+          aria-errormessage="Please add a link"
+        />
+        <p class="add-link">Please add a link</p>
+        <button class="cta short-btn" type="button">Shorten It!</button>
+      </form>
+
+      <section class="statistics">
+        <section class="shorted-links">
+          <!-- <div class="shorted">
+            <p id="original-link">https://frontendmentor.io</p>
+            <hr />
+            <div>
+              <input id="shorted-link" value="https://relink/k4lKyk" />
+              <button class="cta copy-btn">Copy</button>
+            </div>
+          </div> -->
+        </section>
+        <div class="header">
+          <h2>Advanced Statistics</h2>
+          <p>
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
+          </p>
+        </div>
+        <div class="brand">
+          <img
+            src="./images/icon-brand-recognition.svg"
+            alt="icon-brand-recognition"
+          />
+          <h2>Brand Recognition</h2>
+          <p>
+            Boost your brand recognition with each click. Generic links don’t
+            mean a thing. Branded links help instil confidence in your content.
+          </p>
+        </div>
+        <div class="records">
+          <img
+            src="./images/icon-detailed-records.svg"
+            alt="icon-detailed-records"
+          />
+          <h2>Detailed Records</h2>
+          <p>
+            Gain insights into who is clicking your links. Knowing when and
+            where people engage with your content helps inform better decisions.
+          </p>
+        </div>
+        <div class="customize">
+          <img
+            src="./images/icon-fully-customizable.svg"
+            alt="icon-fully-customizable"
+          />
+          <h2>Fully Customizable</h2>
+          <p>
+            Improve brand awareness and content discoverability through
+            customizable links, supercharging audience engagement.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section class="before-footer">
+        <h2>Boost your links today</h2>
+        <button class="cta">Get Started</button>
+      </section>
+      <section class="footer">
+        <div class="features">
+          <h3>Features</h3>
+          <p>Link Shortening</p>
+          <p>Branded Links</p>
+          <p>Analytics</p>
+        </div>
+        <div class="resources">
+          <h3>Resources</h3>
+          <p>Blog</p>
+          <p>Developers</p>
+          <p>Support</p>
+        </div>
+        <div class="company">
+          <h3>Company</h3>
+          <p>About</p>
+          <p>About Our Team</p>
+          <p>Careers</p>
+          <p>Contact</p>
+        </div>
+      </section>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://fibr.vercel.app" target="_blank">Folorunsho Ibrahim</a
+        >.
+      </div>
+    </footer>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

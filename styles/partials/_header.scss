@@ -1,0 +1,35 @@
+$VeryDarkViolet: hsl(260, 8%, 14%);
+$GrayishViolet: hsl(257, 7%, 63%);
+
+header {
+  padding: 2rem 1rem;
+  max-width: 1120px;
+  overflow-x: hidden;
+  padding-bottom: 8rem;
+  #working {
+    margin-top: -4rem;
+    width: 550px;
+  }
+  section {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+    h2 {
+      color: $VeryDarkViolet;
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+    p {
+      color: $GrayishViolet;
+      line-height: 1.5;
+      max-width: 65ch;
+    }
+    button {
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 1rem 3rem;
+      color: white;
+      text-align: center;
+    }
+  }
+}
