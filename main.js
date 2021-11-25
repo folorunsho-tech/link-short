@@ -12,18 +12,66 @@ hamburger.addEventListener("click", () => {
     menu.style.display = "none";
   }
 });
-localStorage.setItem("shortenedLinks", JSON.stringify([]));
-let shortened = JSON.parse(localStorage.getItem("shortenedLinks"));
-if (!localStorage.getItem("shortenedLinks").length === 0) {
-  shortened.forEach((link) => {
+
+const create = (short_link, full_link) => {
+  let div = document.createElement("div");
+  div.classList.add("shorted");
+  div.innerHTML = `<p id="original-link">${full_link}</p>
+        <hr />
+        <div>
+        <input id="shorted-link" value="${short_link}" />
+        <button class="cta copy-btn">Copy</button>
+        </div>`;
+  shortedLinks.append(div);
+  const copyBtn = document.querySelector(".copy-btn");
+  const shortedLink = document.querySelector("#shorted-link");
+  copyBtn.addEventListener("click", () => {
+    shortedLink.select();
+    document.execCommand("copy");
+    copyBtn.textContent = "Copied!";
+    copyBtn.style.background = "hsl(260, 8%, 14%)";
+    setTimeout(() => {
+      copyBtn.textContent = "Copy";
+      copyBtn.style.background = "hsl(180, 66%, 49%)";
+    }, 1000);
+  });
+  const shortened = JSON.parse(localStorage.getItem("shortenedLinks")) || [];
+  shortened.push({
+    full_link,
+    short_link,
+  });
+  localStorage.setItem("shortenedLinks", JSON.stringify(shortened));
+};
+
+const getShorten = async () => {
+  await fetch(`https://api.shrtco.de/v2/shorten?url=${input.value}`)
+    .then((res) => res.json())
+    .then((data) => {
+      create(data.result.full_short_link, input.value);
+      setTimeout(() => {
+        input.value = "";
+      }, 1000);
+    });
+};
+document.forms["short"].addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (input.reportValidity()) {
+    getShorten();
+  }
+});
+
+const render = () => {
+  const links = JSON.parse(localStorage.getItem("shortenedLinks"));
+
+  links.forEach((link) => {
     let div = document.createElement("div");
     div.classList.add("shorted");
     div.innerHTML = `<p id="original-link">${link.full_link}</p>
-    <hr />
-    <div>
-    <input id="shorted-link" value="${link.short_link}" />
-    <button class="cta copy-btn">Copy</button>
-    </div>`;
+        <hr />
+        <div>
+        <input id="shorted-link" value="${link.short_link}" />
+        <button class="cta copy-btn">Copy</button>
+        </div>`;
     shortedLinks.append(div);
   });
 
@@ -39,49 +87,7 @@ if (!localStorage.getItem("shortenedLinks").length === 0) {
       copyBtn.style.background = "hsl(180, 66%, 49%)";
     }, 1000);
   });
-}
-document.forms["short"].addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (input.reportValidity()) {
-    let shortened = [];
-    let value = input.value;
-    const getShorten = async () => {
-      await fetch(`https://api.shrtco.de/v2/shorten?url=${input.value}`)
-        .then((res) => res.json())
-        .then((data) => {
-          let div = document.createElement("div");
-          div.classList.add("shorted");
-          div.innerHTML = `<p id="original-link">${value}</p>
-        <hr />
-        <div>
-          <input id="shorted-link" value="${data.result.full_short_link}" />
-          <button class="cta copy-btn">Copy</button>
-        </div>`;
-          shortedLinks.append(div);
-          shortened.push({
-            short_link: data.result.full_short_link,
-            full_link: value,
-          });
-          localStorage.setItem("shortenedLinks", JSON.stringify(shortened));
-        });
-      const copyBtn = document.querySelector(".copy-btn");
-      const shortedLink = document.querySelector("#shorted-link");
-
-      copyBtn.addEventListener("click", () => {
-        shortedLink.select();
-        document.execCommand("copy");
-        copyBtn.textContent = "Copied!";
-        copyBtn.style.background = "hsl(260, 8%, 14%)";
-        setTimeout(() => {
-          copyBtn.textContent = "Copy";
-          copyBtn.style.background = "hsl(180, 66%, 49%)";
-        }, 1000);
-      });
-    };
-    getShorten();
-
-    setTimeout(() => {
-      input.value = "";
-    }, 1000);
-  }
+};
+document.addEventListener("DOMContentLoaded", () => {
+  render();
 });

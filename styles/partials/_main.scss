@@ -54,19 +54,16 @@ main {
   }
   .shorted-links {
     display: grid;
-    padding: 3rem;
     grid-template-columns: 1fr;
     gap: 4rem;
+    justify-content: center;
     .shorted {
       border-radius: 10px;
       margin-top: -2rem;
       background-color: white;
       padding: 1rem;
+      max-width: 300px;
       text-align: left;
-      p {
-        color: $DarkViolet;
-        font-weight: bold;
-      }
 
       hr {
         color: $Gray;
@@ -80,20 +77,14 @@ main {
           font-weight: 600;
           color: white;
         }
-        .del-btn {
-          background-color: $Red;
-          transition: all 0.3s ease-in-out;
-        }
-        .del-btn:hover {
-          background-color: lighten($color: $Red, $amount: 10);
-        }
       }
     }
   }
-  #originalLink {
+  #original-link {
+    color: $DarkViolet;
     width: 250px;
-    white-space: nowrap;
-    overflow: hidden;
+    word-wrap: break-word;
+    font-weight: bold;
     text-overflow: ellipsis;
   }
   #shorted-link {

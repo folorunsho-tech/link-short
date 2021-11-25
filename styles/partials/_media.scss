@@ -76,7 +76,12 @@
         padding: 0.5rem 2rem;
       }
     }
+    .shorted-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
+
   footer {
     .footer {
       display: grid;

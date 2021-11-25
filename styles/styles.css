@@ -185,10 +185,12 @@ main .shorten-here button {
 main .shorted-links {
   display: -ms-grid;
   display: grid;
-  padding: 3rem;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   gap: 4rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 main .shorted-links .shorted {
@@ -196,12 +198,8 @@ main .shorted-links .shorted {
   margin-top: -2rem;
   background-color: white;
   padding: 1rem;
+  max-width: 300px;
   text-align: left;
-}
-
-main .shorted-links .shorted p {
-  color: #3b3054;
-  font-weight: bold;
 }
 
 main .shorted-links .shorted hr {
@@ -217,20 +215,11 @@ main .shorted-links .shorted div button {
   color: white;
 }
 
-main .shorted-links .shorted div .del-btn {
-  background-color: #f46262;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-main .shorted-links .shorted div .del-btn:hover {
-  background-color: #f79191;
-}
-
-main #originalLink {
+main #original-link {
+  color: #3b3054;
   width: 250px;
-  white-space: nowrap;
-  overflow: hidden;
+  word-wrap: break-word;
+  font-weight: bold;
   text-overflow: ellipsis;
 }
 
@@ -447,6 +436,12 @@ footer .footer .features p, footer .footer .resources p, footer .footer .company
     width: 30%;
     font-size: 0.7rem;
     padding: 0.5rem 2rem;
+  }
+  main .shorted-links {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
   footer .footer {
     display: -ms-grid;
