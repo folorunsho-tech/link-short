@@ -1,0 +1,468 @@
+header {
+  padding: 2rem 1rem;
+  max-width: 1120px;
+  overflow-x: hidden;
+  padding-bottom: 8rem;
+}
+header #working {
+  margin-top: -4rem;
+  width: 550px;
+}
+header section {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+header section h2 {
+  color: hsl(260, 8%, 14%);
+  font-size: 2rem;
+  line-height: 1.1;
+}
+header section p {
+  color: hsl(257, 7%, 63%);
+  line-height: 1.5;
+  max-width: 65ch;
+}
+header section button {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem 3rem;
+  color: white;
+  text-align: center;
+}
+
+nav {
+  display: grid;
+  position: relative;
+  max-width: 1120px;
+  padding: 2rem 1rem;
+}
+nav .logo {
+  grid-row: 1/2;
+}
+nav .hamburger {
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: flex-end;
+  grid-row: 1/2;
+}
+nav .hamburger img {
+  width: 30px;
+}
+
+.menu {
+  display: none;
+  background-color: hsl(257, 27%, 26%);
+  z-index: 1000;
+  padding: 1rem;
+  grid-column: 1/3;
+  border-radius: 18px;
+  font-weight: 500;
+  position: absolute;
+  margin: 5rem 0;
+  width: 280px;
+}
+.menu ul {
+  width: 70%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.menu ul li a {
+  color: white;
+}
+.menu button {
+  display: block;
+  text-align: center;
+  margin: 1rem auto;
+  width: 100%;
+  font-weight: 600;
+  color: white;
+  padding: 0.7rem 0;
+}
+.menu div {
+  padding: 1rem 0.5rem 0 0;
+  border-top: 1px solid hsl(257, 7%, 63%);
+}
+.menu div .login {
+  background-color: transparent;
+}
+
+main {
+  position: relative;
+}
+main h2 {
+  color: hsl(260, 8%, 14%);
+}
+main p {
+  color: hsl(257, 7%, 63%);
+  font-size: 0.9rem;
+}
+main .shorten-here {
+  background: url("../../images/bg-shorten-mobile.svg");
+  background-color: hsl(257, 27%, 26%);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -5rem;
+  gap: 1rem;
+  width: 80%;
+  border-radius: 14px;
+  margin: 0 auto;
+  transform: translateX(16px);
+  padding: 2rem 1rem;
+}
+main .shorten-here input {
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+main .shorten-here input:invalid {
+  outline: 2px solid red;
+}
+main .shorten-here p {
+  font-size: 0.7rem;
+  color: hsl(0, 87%, 67%);
+  font-style: italic;
+  margin-top: -0.5rem;
+  display: none;
+}
+main .shorten-here button {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 3rem;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+main .shorted-links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  justify-content: center;
+}
+main .shorted-links .shorted {
+  border-radius: 10px;
+  margin-top: -2rem;
+  background-color: white;
+  padding: 1rem;
+  max-width: 300px;
+  text-align: left;
+}
+main .shorted-links .shorted hr {
+  color: hsl(0, 0%, 75%);
+}
+main .shorted-links .shorted div button {
+  padding: 0.7rem 2rem;
+  margin-top: 1rem;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+}
+main #original-link {
+  color: hsl(257, 27%, 26%);
+  width: 250px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-overflow: ellipsis;
+}
+main #shorted-link {
+  width: 250px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  color: hsl(180, 66%, 49%);
+  padding-top: 1rem;
+  font-size: 1rem;
+}
+main .statistics {
+  background-color: #f2f2f2;
+  padding: 8rem 1rem;
+  text-align: center;
+}
+main .statistics .header {
+  margin-bottom: 3rem;
+  max-width: 45ch;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+main .statistics .brand {
+  background-color: white;
+  padding: 1rem 1.2rem;
+  max-width: 300px;
+  margin: 0 auto;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 10px;
+}
+main .statistics .brand img {
+  background-color: hsl(260, 8%, 14%);
+  padding: 0.8rem;
+  border-radius: 100%;
+  margin-top: -6rem;
+}
+main .statistics .records {
+  max-width: 300px;
+  margin: 5rem auto;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: white;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+}
+main .statistics .records img {
+  background-color: hsl(260, 8%, 14%);
+  padding: 0.8rem;
+  border-radius: 100%;
+  margin-top: -6rem;
+}
+main .statistics .customize {
+  background-color: white;
+  max-width: 300px;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 1rem 1.2rem;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+main .statistics .customize img {
+  background-color: hsl(260, 8%, 14%);
+  padding: 0.8rem;
+  border-radius: 100%;
+  margin-top: -6rem;
+}
+
+footer {
+  background-color: hsl(260, 8%, 14%);
+}
+footer .before-footer {
+  background: url("../../images/bg-boost-mobile.svg");
+  background-color: hsl(257, 27%, 26%);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+footer .before-footer h2 {
+  font-size: 1.3rem;
+}
+footer .before-footer button {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 1rem 3rem;
+  color: white;
+  text-align: center;
+}
+footer .footer {
+  text-align: center;
+  padding: 1rem 0;
+}
+footer .footer .features h3, footer .footer .company h3, footer .footer .resources h3 {
+  color: white;
+}
+footer .footer .features p, footer .footer .company p, footer .footer .resources p {
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  nav {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+  nav .hamburger {
+    display: none;
+  }
+  nav .menu {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
+    position: static;
+    font-size: 0.8rem;
+    background-color: transparent;
+  }
+  nav .menu ul {
+    padding: 0;
+    flex-direction: row;
+    width: 60%;
+  }
+  nav .menu ul li a {
+    color: hsl(257, 7%, 63%);
+  }
+  nav .menu ul li a:hover {
+    color: #524e5a;
+  }
+  nav .menu div {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    align-items: center;
+    width: 40%;
+    border: none;
+  }
+  nav .menu div button {
+    color: hsl(257, 7%, 63%);
+  }
+  nav .menu div .login:hover {
+    color: #524e5a;
+  }
+  nav .menu div .signup {
+    color: white;
+  }
+  header {
+    text-align: center;
+  }
+  header #working {
+    margin-top: -2rem;
+    width: 100%;
+  }
+  main .shorten-here {
+    flex-direction: row;
+    gap: 0.5rem;
+    transform: translateX(60px);
+  }
+  main .shorten-here input {
+    width: 80%;
+  }
+  main .shorten-here .add-link {
+    position: absolute;
+    bottom: 0;
+  }
+  main .shorten-here button {
+    width: 30%;
+    font-size: 0.7rem;
+    padding: 0.5rem 2rem;
+  }
+  main .shorted-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  footer .footer {
+    display: grid;
+    padding: 2rem;
+    justify-content: center;
+    text-align: left;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 900px) {
+  nav {
+    padding: 2rem;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    padding-bottom: 6rem;
+  }
+  header #working {
+    order: 2;
+    justify-self: end;
+  }
+  header section {
+    text-align: left;
+  }
+  header section h2 {
+    font-size: 3rem;
+  }
+  header section p {
+    margin-top: -1rem;
+    width: 40ch;
+  }
+  header section button {
+    margin-top: 1rem;
+  }
+  main {
+    width: 100%;
+  }
+  main .shorten-here {
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+  main .statistics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding-top: 8rem;
+  }
+  main .statistics .header {
+    grid-column: 1/4;
+  }
+  main .shorted-links {
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: -2rem;
+  }
+  main .shorted-links .shorted {
+    margin-top: 1rem;
+  }
+}
+@media screen and (min-width: 1120px) {
+  main .shorted-links {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav,
+header,
+main {
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+  font-size: 0.8rem;
+  border-radius: 40px;
+  border: none;
+}
+
+li {
+  list-style: none;
+}
+
+.cta {
+  background-color: hsl(180, 66%, 49%);
+}
+
+.cta:hover {
+  background-color: #7ce4e4;
+}
+
+.transition, .delete-btn, .menu ul li a, .menu div .login, .cta {
+  transition: all 0.3s ease;
+}
+
+.delete-btn {
+  background-color: hsl(0, 87%, 67%);
+  padding: 0.5rem 1rem;
+  color: white;
+  text-transform: capitalize;
+}/*# sourceMappingURL=styles.css.map */
